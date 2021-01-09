@@ -33,6 +33,12 @@ func HowLongAgo(timebefore int64, timenow int64) (strres string) {
 	return strres
 }
 
+func Time2DateType1(Input time.Time) (OutPut string) {
+
+	OutPut = Input.Format("01/02 15:04")
+	return OutPut
+}
+
 func GetAge(BirthDay time.Time, Now time.Time) (age int) {
 	age = 0
 	age = Now.Year() - BirthDay.Year()
