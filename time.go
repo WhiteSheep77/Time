@@ -40,11 +40,14 @@ func Time2DateType1(Input time.Time) (OutPut string) {
 }
 
 func GetAge(BirthDay time.Time, Now time.Time) (age int) {
-	age = 0
-	age = Now.Year() - BirthDay.Year()
-	if age < 0 {
-		age = 0
+
+	diff := Now.Unix() - BirthDay.Unix()
+	year := (diff / (31536000))
+
+	if year < 0 {
+		year = 0
 	}
+	age = int(year)
 	return age
 }
 
