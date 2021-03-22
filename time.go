@@ -81,7 +81,7 @@ func GetConstellation(BirthDay time.Time) (star string) {
 		star = "巨蟹座"
 	}
 	if (month == 7 && day >= 23) || (month == 8 && day <= 22) {
-		star = "狮子座"
+		star = "獅子座"
 	}
 	if (month == 8 && day >= 23) || (month == 9 && day <= 22) {
 		star = "處女座"
