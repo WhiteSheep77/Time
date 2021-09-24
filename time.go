@@ -100,3 +100,53 @@ func GetConstellation(BirthDay time.Time) (star string) {
 	}
 	return star
 }
+
+func GetConstellationEn(BirthDay time.Time) (star string) {
+
+	month := BirthDay.Month()
+	day := BirthDay.Day()
+	star = "Unknown"
+	if month <= 0 || month >= 13 {
+		star = "Unknown"
+	}
+	if day <= 0 || day >= 32 {
+		star = "Unknown"
+	}
+	if (month == 1 && day >= 20) || (month == 2 && day <= 18) {
+		star = "Aquarius"
+	}
+	if (month == 2 && day >= 19) || (month == 3 && day <= 20) {
+		star = "Pisces"
+	}
+	if (month == 3 && day >= 21) || (month == 4 && day <= 19) {
+		star = "Aries"
+	}
+	if (month == 4 && day >= 20) || (month == 5 && day <= 20) {
+		star = "Taurus"
+	}
+	if (month == 5 && day >= 21) || (month == 6 && day <= 21) {
+		star = "Gemini"
+	}
+	if (month == 6 && day >= 22) || (month == 7 && day <= 22) {
+		star = "Cancer"
+	}
+	if (month == 7 && day >= 23) || (month == 8 && day <= 22) {
+		star = "Leo"
+	}
+	if (month == 8 && day >= 23) || (month == 9 && day <= 22) {
+		star = "Virgo"
+	}
+	if (month == 9 && day >= 23) || (month == 10 && day <= 22) {
+		star = "Libra"
+	}
+	if (month == 10 && day >= 23) || (month == 11 && day <= 21) {
+		star = "Scorpio"
+	}
+	if (month == 11 && day >= 22) || (month == 12 && day <= 21) {
+		star = "Sagittarius"
+	}
+	if (month == 12 && day >= 22) || (month == 1 && day <= 19) {
+		star = "Capricorn"
+	}
+	return star
+}
