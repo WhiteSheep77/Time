@@ -40,15 +40,26 @@ func Time2DateType1(Input time.Time) (OutPut string) {
 }
 
 func GetAge(BirthDay time.Time, Now time.Time) (age int) {
+	YearDiff := Now.Year() - BirthDay.Year()
 
-	diff := Now.Unix() - BirthDay.Unix()
-	year := (diff / (31536000))
-
-	if year < 0 {
-		year = 0
+	if YearDiff < 0 {
+		return 0
 	}
-	age = int(year)
-	return age
+
+	if Now.Month() > BirthDay.Month() {
+		YearDiff = YearDiff - 1
+		return YearDiff
+	}
+
+	if Now.Month() == BirthDay.Month() {
+		if Now.Day() > BirthDay.Day() {
+			YearDiff = YearDiff - 1
+			return YearDiff
+		}
+	}
+
+	return YearDiff
+
 }
 
 func GetConstellation(BirthDay time.Time) (star string) {
