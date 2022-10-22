@@ -39,7 +39,7 @@ func Time2DateType1(Input time.Time) (OutPut string) {
 	return OutPut
 }
 
-func GetAge(BirthDay time.Time, Now time.Time) (age int) {
+func GetAgeNew(BirthDay time.Time, Now time.Time) (age int) {
 	YearDiff := Now.Year() - BirthDay.Year()
 
 	if YearDiff < 0 {
