@@ -46,13 +46,13 @@ func GetAge(BirthDay time.Time, Now time.Time) (age int) {
 		return 0
 	}
 
-	if Now.Month() > BirthDay.Month() {
+	if BirthDay.Month() > Now.Month() {
 		YearDiff = YearDiff - 1
 		return YearDiff
 	}
 
 	if Now.Month() == BirthDay.Month() {
-		if Now.Day() > BirthDay.Day() {
+		if BirthDay.Day() > Now.Day() {
 			YearDiff = YearDiff - 1
 			return YearDiff
 		}
