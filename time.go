@@ -163,3 +163,53 @@ func GetConstellationEn(BirthDay time.Time) (star string) {
 	}
 	return star
 }
+
+func GetConstellationJp(BirthDay time.Time) (star string) {
+
+	month := BirthDay.Month()
+	day := BirthDay.Day()
+	star = "Unknown"
+	if month <= 0 || month >= 13 {
+		star = "Unknown"
+	}
+	if day <= 0 || day >= 32 {
+		star = "Unknown"
+	}
+	if (month == 1 && day >= 20) || (month == 2 && day <= 18) {
+		star = "みずがめ座"
+	}
+	if (month == 2 && day >= 19) || (month == 3 && day <= 20) {
+		star = "うお座"
+	}
+	if (month == 3 && day >= 21) || (month == 4 && day <= 19) {
+		star = "おひつじ座"
+	}
+	if (month == 4 && day >= 20) || (month == 5 && day <= 20) {
+		star = "おうし座"
+	}
+	if (month == 5 && day >= 21) || (month == 6 && day <= 21) {
+		star = "ふたご座"
+	}
+	if (month == 6 && day >= 22) || (month == 7 && day <= 22) {
+		star = "かに座"
+	}
+	if (month == 7 && day >= 23) || (month == 8 && day <= 22) {
+		star = "しし座"
+	}
+	if (month == 8 && day >= 23) || (month == 9 && day <= 22) {
+		star = "おとめ座"
+	}
+	if (month == 9 && day >= 23) || (month == 10 && day <= 22) {
+		star = "てんびん座"
+	}
+	if (month == 10 && day >= 23) || (month == 11 && day <= 21) {
+		star = "さそり座"
+	}
+	if (month == 11 && day >= 22) || (month == 12 && day <= 21) {
+		star = "いて座"
+	}
+	if (month == 12 && day >= 22) || (month == 1 && day <= 19) {
+		star = "やぎ座"
+	}
+	return star
+}
